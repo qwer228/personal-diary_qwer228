@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ entry.title }}</h2>
+<p class="date">{{ entry.date }}</p>
+<div style="white-space: pre-wrap; margin: 20px 0;">{{ entry.content }}</div>
+<a href="/edit/{{ entry.id }}" class="btn btn-primary">Редактировать</a>
+<form method="POST" action="/delete/{{ entry.id }}" style="display:inline;">
+    <button type="submit" class="btn btn-danger">Удалить</button>
+</form>
+<a href="/" class="btn btn-secondary">На главную</a>
+{% endblock %}
